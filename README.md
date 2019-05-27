@@ -7,4 +7,7 @@
 Programas utilizados:
 </h2>
 
-
+<ul>
+<li><a href="https://netbeans.org/downloads/8.2/" rel="nofollow">Netbeans-8.2</a> - IDE utilizado</li>
+<li><a href="https://maven.apache.org/" rel="nofollow">Maven</a> - Gerenciador de Dependencias</li>
+</ul>
