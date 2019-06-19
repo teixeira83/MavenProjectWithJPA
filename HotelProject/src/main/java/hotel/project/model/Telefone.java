@@ -1,12 +1,26 @@
 package hotel.project.model;
 
 import java.io.Serializable;
-import javax.persistence.Embeddable;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 
-@Embeddable
+@Entity
 public class Telefone implements Serializable {
-
+    
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private String ddd;
     private String numero;
+    
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 }

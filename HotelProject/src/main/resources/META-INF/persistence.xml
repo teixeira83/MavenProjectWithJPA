@@ -10,6 +10,7 @@
     <class>hotel.project.model.Quarto</class>
     <class>hotel.project.model.Cama</class>
     <class>hotel.project.model.Reserva</class>
+    <class>hotel.project.model.Telefone</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/db_hotel?zeroDateTimeBehavior=convertToNull"/>
       <property name="javax.persistence.jdbc.user" value="root"/>

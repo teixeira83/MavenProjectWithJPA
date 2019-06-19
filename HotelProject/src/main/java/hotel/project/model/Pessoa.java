@@ -1,9 +1,9 @@
 package hotel.project.model;
 
 import java.io.Serializable;
+import javax.persistence.CascadeType;
 import javax.persistence.DiscriminatorColumn;
 import javax.persistence.DiscriminatorType;
-import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -27,12 +27,11 @@ public abstract class Pessoa implements Serializable {
     
     private String rg;
     
-    @OneToOne
-    private Endereco endereco;
-
-    @Embedded
-    private Telefone telefone;
+    @OneToOne(cascade = CascadeType.PERSIST)
+    private Endereco endereco; 
     
+    @OneToOne(cascade = CascadeType.PERSIST)
+    private Telefone telefone;
     
     public Long getId() {
         return id;

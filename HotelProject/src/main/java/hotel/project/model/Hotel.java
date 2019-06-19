@@ -27,6 +27,9 @@ public class Hotel implements Serializable {
     @OneToOne(cascade = CascadeType.PERSIST)
     private Endereco endereco;
     
+    @OneToOne(cascade = CascadeType.PERSIST)
+    private Telefone telefone;
+    
     @OneToMany(cascade  = CascadeType.ALL)
     @JoinColumn(name="quarto")
     private List<Quarto> quarto = new ArrayList<>();

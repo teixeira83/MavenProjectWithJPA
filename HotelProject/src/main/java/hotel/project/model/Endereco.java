@@ -5,15 +5,13 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
-
 
 @Entity
 public class Endereco implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long ID;
+    private Long id;
     private String logradouro;
     private String numero;
     private String complemento;
@@ -22,15 +20,12 @@ public class Endereco implements Serializable {
     private String cep;
     private String uf;
 
-    @OneToOne(mappedBy="endereco")
-    private Hotel hotel;
-    
     public Long getID() {
-        return ID;
+        return id;
     }
 
     public void setID(Long ID) {
-        this.ID = ID;
+        this.id = id;
     }
     
 }
