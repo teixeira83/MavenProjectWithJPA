@@ -1,12 +1,15 @@
 package hotel.project.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 @Entity
@@ -19,10 +22,14 @@ public class Hotel implements Serializable {
 
     private String nome;
     
-    private List<String> servicos;
+    private List<String> servicos = new ArrayList<>();
         
     @OneToOne(cascade = CascadeType.PERSIST)
     private Endereco endereco;
+    
+    @OneToMany(cascade  = CascadeType.ALL)
+    @JoinColumn(name="quarto")
+    private List<Quarto> quarto = new ArrayList<>();
     
     public Long getId() {
         return id;

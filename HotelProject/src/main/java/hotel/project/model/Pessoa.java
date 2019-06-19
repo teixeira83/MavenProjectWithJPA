@@ -1,16 +1,22 @@
 package hotel.project.model;
 
 import java.io.Serializable;
+import javax.persistence.DiscriminatorColumn;
+import javax.persistence.DiscriminatorType;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 import javax.persistence.OneToOne;
 
 
 @Entity
-public class Pessoa implements Serializable {
+@Inheritance(strategy = InheritanceType.JOINED)
+@DiscriminatorColumn(name="TIPO_PESSOA", discriminatorType=DiscriminatorType.INTEGER)
+public abstract class Pessoa implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
